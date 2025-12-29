@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VitaminhCL | Honey Stock </title>
+    <link rel="icon" type="image/png" href="img/logobg.png">
+    <link rel="apple-touch-icon" href="img/logobg.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="interactive-bg"></div>
+    <div id="bee-layer"></div>
+
+    <div class="main-container">
+        <section id="view-client" class="active">
+            <header>
+                <h1>VitaminhCL | Honey Stock</h1>
+                <div class="total-box"><span id="total-money">$0</span></div>
+            </header>
+            <div id="client-grid" class="cards-grid"></div>
+            <footer style="margin-top: 50px; text-align: center;">
+                <button onclick="toggleView('login-section')" class="btn-link">Administración</button>
+            </footer>
+        </section>
+
+        <section id="login-section">
+            <div class="card card-login">
+                <h2 style="color: var(--p-gold); margin-bottom: 20px;">Acceso</h2>
+                <input type="password" id="pass" placeholder="PIN" inputmode="numeric">
+                <button class="btn-act btn-gold" onclick="checkLogin()">ENTRAR</button>
+                <button class="btn-link" onclick="toggleView('view-client')">VOLVER</button>
+            </div>
+        </section>
+
+        <section id="view-admin">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <h2 style="color: var(--p-gold); font-size: 1.2rem;">CONTROL</h2>
+                <button class="btn-exit" onclick="toggleView('view-client')">SALIR</button>
+            </div>
+            <div id="admin-grid" class="cards-grid"></div>
+            <div class="history-container">
+                <h3 class="history-title">MOVIMIENTOS</h3>
+                <div id="historial-list"></div>
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
